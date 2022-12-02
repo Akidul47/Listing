@@ -101,13 +101,22 @@ def thank_you(request):
     return render(request, 'cars/thank_you.html', {'v':v})
 
 def asignment_1(request):
-    return render(request, 'cars/Assign_1.html')
+    with open('Assignment_1.txt', 'r') as f:
+        v = f.read()
+        f.close()    
+    return render(request, 'cars/Assign_1.html', {'v':v} )
 
 def asignment_2(request):
-    return render(request, 'cars/Assign_2.html')
+    with open('Assignment_2.txt', 'r') as f:
+        v = f.read()
+        f.close() 
+    return render(request, 'cars/Assign_2.html', {'v':v})
 
 def asignment_3(request):
-    return render(request, 'cars/Assign_3.html')
+    with open('Assignment_3.txt', 'r') as f:
+        v = f.read()
+        f.close() 
+    return render(request, 'cars/Assign_3.html',{'v':v})
 
 def rental_review(request):
     return render(request, 'cars/rental_review.html')
@@ -118,12 +127,3 @@ def rental_review(request):
 #         form = ReviewForm(request.POST) 
 #         if form.is_valid():
 #             print(form.cleaned_data)
-
-
-
-
-
-
-
-
-    
